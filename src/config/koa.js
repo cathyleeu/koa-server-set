@@ -12,7 +12,7 @@ export default function configKoa(app) {
   }));
 
   app.use((ctx, next) => { //14-17은 앱에서 서버로 api콜(get or post)을 보냈어
-    //클라이언트 -> 서버 :리퀘스트  서버-> 클라이언트 : ?
+    //클라이언트 -> 서버 :리퀘스트  서버-> 클라이언트 : reponse
     ctx.body = ctx.request.body;
     return next();
   });

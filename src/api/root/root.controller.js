@@ -42,6 +42,4 @@ function* index(ctx, next) {
 }
 
 
-
-
 */

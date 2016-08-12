@@ -36,6 +36,4 @@ function* index(ctx, next) {
 }
 
 
-
-
 */

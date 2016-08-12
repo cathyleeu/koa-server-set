@@ -20,7 +20,8 @@
     "koa-morgan": "^1.0.1",
     "koa-mount": "^2.0.0",
     "koa-router": "^7.0.1",
-    "mongoose": "^4.5.8"
+    "mongoose": "^4.5.7",
+    "mongoose-auto-increment": "^5.0.1"
   },
   "devDependencies": {
     "eslint": "^2.13.1",

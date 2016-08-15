@@ -4,19 +4,17 @@ import mongoose from 'mongoose'
 const schema = mongoose.Schema({
   username: String,
   useruniv: String,
-  userimg: String,
-  update: { type: Date, default: Date.now },
-  time: String,
-  cxt: String,
-  location: { type: String, default: null },
-  img: String,
-}, {collection:'post'})
+  useremail: String,
+  password: String,
+  password_confirmation: String,
+
+}, {collection:'register'})
 
 // schema.plugin(autoIncrement.plugin, {
-//   model: "post",
+//   model: "register",
 //   field: "no",
 //   startAt: 1,
 //   incrementBy: 1
 // });
 
-module.exports = mongoose.model('post', schema);
+module.exports = mongoose.model('register', schema);

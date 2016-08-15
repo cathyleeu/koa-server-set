@@ -2,7 +2,7 @@
 
 import config from '../../config';
 import mongoose from 'mongoose';
-import post from './model/post'
+import post2 from './model/post'
 
 export function list() {
   return new Promise((resolve) => {
@@ -23,7 +23,7 @@ export function post() {
   return new Promise((resolve) => {
     setTimeout(() => { //  resolve(config) resolve일종의 return
       // 의미 있는거 아녕~
-      resolve(post);
+      resolve(post2);
     });
   });
 }

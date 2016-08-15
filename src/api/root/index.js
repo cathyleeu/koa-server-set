@@ -2,12 +2,14 @@
 
 import { index, feed} from './root.controller';
 import router from 'koa-router';
+import register from './controller/register';
 
 
 const root = router();
 
 root.get('/', index);
-root.get('/feed', feed);
+// root.get('/feed', feed);
+root.post('/register', register);
 
 export default root;
 

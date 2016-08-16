@@ -5,10 +5,9 @@ const Feed = new mongoose.Schema({
   useruniv: String,
   userimg: String,
   update: { type: Date, default: Date.now },
-  time: String,
   cxt: String,
   // location: { type: String, default: null },
-  img: String,
+  imageSource: String,
 })
 
 export default mongoose.model('feed', Feed)

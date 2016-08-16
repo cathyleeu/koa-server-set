@@ -1,13 +1,12 @@
 'use strict';
 
-import { index, feed} from './root.controller';
+import { index } from './root.controller';
 import router from 'koa-router';
-
 
 const root = router();
 
 root.get('/', index);
-root.get('/feed', feed);
+
 
 export default root;
 

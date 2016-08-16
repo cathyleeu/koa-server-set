@@ -1,7 +1,7 @@
 'use strict';
 
-import { list } from './root.model';
-import Post from './model/post'
+import { list, list2 } from './root.model';
+
 
 export async function index(ctx, next) {
   let data = await list(); //리스트 불러온거~~~
@@ -10,19 +10,13 @@ export async function index(ctx, next) {
   await next();
 }
 
-export async function feed(ctx, next) {
-  add: function *(next) {
-    if('POST' != this.method) return await next;
-    const post = new Post(this.request.body)
-    this.body = await post.save()
-  }
-  all: function *(next) {
-    if('GET' != this.method) return await next;
-    const feedlist = await Post.find().sort({update: -1})
-    const result = [];
-  }
-  this.body = result;
+export async function post(ctx, next) {
+  let data = await list2(); //리스트 불러온거~~~
+  ctx.status = 200;
+  ctx.body = data;
+  await next();
 }
+
 
 // add: function *(next) {
 //   if('POST' != this.method) return yield next;

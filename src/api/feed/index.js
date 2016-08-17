@@ -6,8 +6,8 @@ import router from 'koa-router';
 
 const feed = router();
 
-feed.post('/feed', createFeed);
-feed.get('/feed', getFeeds);
+feed.post('/', createFeed);
+feed.get('/', getFeeds);
 
 
 export default feed;

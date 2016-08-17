@@ -14,8 +14,8 @@ export async function createFeed(ctx) {
 }
 
 export async function getFeeds(ctx) {
-  const feeds = await Feed.find()
-  ctx.body = { feeds }
+  const feed = await Feed.find()
+  ctx.body = { username: "이유경", useruniv: "명지대학교", userimg:"Avatar" }
 }
 
 export async function updateFeed(ctx) {

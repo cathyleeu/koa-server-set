@@ -5,4 +5,5 @@ export default {
   ip: process.env.IP || 'localhost',
   root: path.normalize(__dirname + '../../'),
   logType: process.env.LOGTYPE || 'dev',
+  // env: process.env.NODE_ENV || 'dev',
 }

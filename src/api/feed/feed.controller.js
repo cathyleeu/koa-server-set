@@ -1,21 +1,24 @@
 import Feed from './feed.model'
 
-export async function createFeed(ctx) {
-  const feed = new Feed(ctx.request.body.feed)
+export async function createFeed(ctx, next) {
+  const feed = new Feed(ctx.request.body)
+  console.log(ctx.request.body)
+  console.log(typeof ctx.request.body)
   try {
-    await feed.save()
+    await feed.save();
+    ctx.body = "ok";
   } catch (err) {
     ctx.throw(422, err.message)
   }
-
-  ctx.body = {
-    feed
-  }
+  // {username:'이유경',useruniv:'명지대학교',userimg:'Avatar',content:'hello world',imageSource:'null'}
+  // ctx.body = {
+  //   feed
+  // }
 }
 
 export async function getFeeds(ctx) {
   const feed = await Feed.find()
-  ctx.body = { username: "이유경", useruniv: "명지대학교", userimg:"Avatar" }
+  ctx.body = { feed }
 }
 
 export async function updateFeed(ctx) {

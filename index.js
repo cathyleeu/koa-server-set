@@ -4,11 +4,10 @@ require('babel-polyfill');
 const config = require('./src/config');
 const app = require('./src/server');
 const mongoose = require('mongoose');
-const autoIncrement = require('mongoose-auto-increment');
 
+mongoose.Promise = global.Promise;
 mongoose.connect(config.dev.endb);
 var db = mongoose.connection;
-autoIncrement.initialize(db);
 db.on('error', function(e) {
   console.error(e);
 });

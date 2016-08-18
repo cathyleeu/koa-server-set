@@ -1,14 +1,27 @@
 import mongoose from 'mongoose'
+// import autoIncrement from'mongoose-auto-increment'
 
 const Feed = new mongoose.Schema({
   username: String,
   useruniv: String,
-  userimg: String,
-  update: { type: Date, default: Date.now },
-  time: String,
-  cxt: String,
+  userimg: { type: String, default: 'Avatar' },
+  // update: { type: Date, default: Date.now },
+  content: { type: String, required: true },
   // location: { type: String, default: null },
-  img: String,
-})
+  imageSource: { type: String, default: 'null' },
+}, {collection: 'feed'})
+
+
+
+
+
 
 export default mongoose.model('feed', Feed)
+
+// export function feed() {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {//
+//       resolve([]);
+//     });
+//   });
+// }

@@ -5,7 +5,7 @@ const Feed = new mongoose.Schema({
   username: String,
   useruniv: String,
   userimg: { type: String, default: 'Avatar' },
-  // update: { type: Date, default: Date.now },
+  update: { type: Date, default: Date.now },
   content: { type: String, required: true },
   // location: { type: String, default: null },
   imageSource: { type: String, default: 'null' },
@@ -13,15 +13,4 @@ const Feed = new mongoose.Schema({
 
 
 
-
-
-
 export default mongoose.model('feed', Feed)
-
-// export function feed() {
-//   return new Promise((resolve) => {
-//     setTimeout(() => {//
-//       resolve([]);
-//     });
-//   });
-// }

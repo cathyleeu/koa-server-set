@@ -4,17 +4,11 @@ import User from './user.model';
 
 
 export async function createUser(ctx) {
-  const user = new User(ctx.request.body.user)
+  const user = new User(ctx.request.body)
   try {
     await user.save()
   } catch (err) {
     ctx.throw(422, err.message)
-  }
-
-  const response = user.toJSON()
-
-  ctx.body = {
-    response
   }
 }
 

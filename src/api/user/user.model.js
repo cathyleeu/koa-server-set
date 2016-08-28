@@ -16,7 +16,7 @@ const User = new mongoose.Schema({
   password_confirmation : { type: String, required: true },
   kindOfProject: { type: String, required: true },
   userProject: { type: String, required: true },
-  userCompany: type: String,
+  userCompany: String,
   push : Boolean,
 }, {collection: 'users'})
 

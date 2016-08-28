@@ -1,4 +1,3 @@
-export root from './root';
 export feed from './feed';
 export user from './user';
 

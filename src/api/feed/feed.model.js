@@ -9,6 +9,14 @@ const Feed = new mongoose.Schema({
   content: { type: String, required: true },
   // location: { type: String, default: null },
   imageSource: { type: String, default: 'null' },
+  comment:[{
+    c_no: Number,
+    c_username: String,
+    c_useruniv: String,
+    c_userimg: { type: String, default: 'Avatar' },
+    c_usercmt: { type: String, required: true },
+    c_posted: { type: Date, default: Date.now },
+  }],
 }, {collection: 'feed'})
 
 

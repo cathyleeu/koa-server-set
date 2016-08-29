@@ -12,7 +12,7 @@ export async function createFeed(ctx, next) {
 }
 
 export async function getFeeds(ctx) {
-  const feed = await Feed.find()
+  const feed = await Feed.find().sort({posted: -1})
   ctx.body = { feed }
 }
 

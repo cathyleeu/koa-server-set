@@ -3,13 +3,15 @@
 import User from './user.model';
 
 
-export async function createUser(ctx) {
+export async function createUser(ctx, next) {
   const user = new User(ctx.request.body)
-  try {
-    await user.save()
-  } catch (err) {
-    ctx.throw(422, err.message)
-  }
+  console.log(ctx.request.body)
+  console.log(typeof ctx.request.body)
+  // try {
+    await user.save();
+  // } catch (err) {
+  //   ctx.throw(422, err.message)
+  // }
 }
 
 export async function getUsers(ctx) {

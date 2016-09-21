@@ -8,7 +8,9 @@ const Feed = new mongoose.Schema({
   posted: { type: Date, default: Date.now },
   content: { type: String, required: true },
   // location: { type: String, default: null },
-  likes:[{type: mongoose.Schema.Types.ObjectId, ref: 'users'}],
+  likes:[{type: mongoose.Schema.Types.ObjectId,
+          presstime: { type: Date, default: Date.now },
+          ref: 'users'}],
   imageSource: { type: String, default: 'null' },
   comment:[{
     c_no: Number,

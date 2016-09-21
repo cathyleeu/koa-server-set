@@ -17,18 +17,24 @@ export async function getFeeds(ctx) {
 }
 
 export async function incLike(ctx) {
-  const feed = new Feed(ctx.request.body);
-  await Feed.update({_id: feed._id}, { $inc: { likes: 1 }});
-  console.log("증가증가");
+  const feed = ctx.request.body;
+  await Feed.findByIdAndUpdate({_id: feed._id},{$push: {"likes": feed.userId}});
+  // console.log("아이디 배열에 추가추가");
 }
 
 export async function decLike(ctx) {
-  const feed = new Feed(ctx.request.body);
-  const data = await Feed.findOne({_id: feed._id});
-  const decCount = data.likes - 1;
-  await Feed.update({_id: feed._id}, {likes: decCount});
+  // const feed = new Feed(ctx.request.body);
+  // const data = await Feed.findOne({_id: feed._id});
+  // console.log(data);
+  // const decCount = data.likes - 1;
+  //await Feed.update({_id: feed._id}, {likes: decCount});
+  console.log(ctx.request.body);
+  const feed = ctx.request.body;
+  await Feed.findByIdAndUpdate({_id: feed._id},{$pull: {"likes": feed.userId}});
   console.log("감소감소");
 }
+
+
 
 // export async function updateFeed(ctx) {
 //   const feed = ctx.body

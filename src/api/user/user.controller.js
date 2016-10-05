@@ -14,11 +14,21 @@ export async function createUser(ctx, next) {
   // }
 }
 
-export async function getUsers(ctx) {
+export async function allUsers(ctx) {
   const users = await User.find()
   ctx.body = { users }
 }
 
+/* 특정 User 정보 조회 */
+export async function getUser(ctx) {
+  const userInfo = ctx.request.body;
+  console.log(userInfo);
+  //const feed = ctx.request.body;
+  const user = await User.findOne({uuid: userInfo.uuid});
+  ctx.body = user;
+}
+
+/* 기존의 getUser
 export async function getUser(ctx, next) {
   try {
     const user = await User.findById(ctx.params.id, '-password')
@@ -39,12 +49,4 @@ export async function getUser(ctx, next) {
 
   if(next) return next()
 }
-
-
-
-// export async function index(ctx, next) {
-//   let data = await list()
-//   ctx.status = 200;
-//   ctx.body = data;
-//   await next();
-// }
+*/

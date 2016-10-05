@@ -1,12 +1,12 @@
 'use strict';
 
-import { createUser, getUsers, getUser } from './user.controller';
+import { createUser, allUsers, getUser } from './user.controller';
 import router from 'koa-router';
 
 const user = router();
 
+user.get('/', allUsers);
 user.post('/', createUser);
-user.get('/', getUsers);
-// user.get('/:id', getUser);
+user.post('/getUser', getUser);
 
 export default user;

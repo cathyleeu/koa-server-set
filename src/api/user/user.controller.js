@@ -33,8 +33,7 @@ export async function login(ctx) {
   console.log(userInfo);
   const user = await User.findOne({
     userEmail: userInfo.userEmail,
-    password: userInfo.password,
-    uuid: userInfo.uuid
+    password: userInfo.password
   });
   console.log(user);
   ctx.body = { user };

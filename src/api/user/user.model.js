@@ -11,7 +11,8 @@ const User = new mongoose.Schema({
   sex: String,
   age: Number,
   userEmail: String,
-  userUniv: { type: String, required: true }
+  userUniv: { type: String, required: true },
+  password: String,
 }, {collection: 'users'})
 
 export default mongoose.model('user', User)

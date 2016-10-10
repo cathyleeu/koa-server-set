@@ -28,6 +28,18 @@ export async function getUser(ctx) {
   ctx.body = user;
 }
 
+export async function login(ctx) {
+  const userInfo = ctx.request.body;
+  console.log(userInfo);
+  const user = await User.findOne({
+    userEmail: userInfo.userEmail,
+    password: userInfo.password,
+    uuid: userInfo.uuid
+  });
+  console.log(user);
+  ctx.body = { user };
+}
+
 /* 기존의 getUser
 export async function getUser(ctx, next) {
   try {

@@ -34,19 +34,15 @@ export async function decLike(ctx) {
   console.log("감소감소");
 }
 
+// 댓글 추가
+export async function addComment(ctx) {
+   console.log(ctx.request.boby);
+   const feed = ctx.request.body;
+   console.log(feed._id);
+   console.log(feed.comment);
+   ctx.body = await Feed.findByIdAndUpdate({_id: feed._id},{$push: {"comment": feed.comment}});
+}
 
-
-// export async function updateFeed(ctx) {
-//   const feed = ctx.body
-//
-//   Object.assign(feed, ctx.request.body)
-//
-//   await feed.save()
-//
-//   ctx.body = {
-//     feed
-//   }
-// }
 
 export async function deleteFeed(ctx) {
   const feed = ctx.body

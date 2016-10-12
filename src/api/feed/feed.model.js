@@ -20,6 +20,4 @@ const Feed = new mongoose.Schema({
   }],
 }, {collection: 'feed'})
 
-
-
 export default mongoose.model('feed', Feed)

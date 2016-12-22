@@ -55,7 +55,7 @@
         "src"
       ],
       "extensions": "js",
-      "quiet": "true"
+      "quiet": true
     }
   },
   "eslintConfig": {

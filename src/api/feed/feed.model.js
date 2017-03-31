@@ -2,11 +2,13 @@ import mongoose from 'mongoose'
 // import autoIncrement from'mongoose-auto-increment'
 
 const Feed = new mongoose.Schema({
-  username: String,
-  useruniv: String,
+  typeOf: String, //전체공개 or 대나무숲
+  name: String,
+  univ: String,
   userimg: { type: String, default: 'Avatar' },
-  posted: { type: Date, default: Date.now },
+  createdOn: { type: Date, default: Date.now },
   content: { type: String, required: true },
+  userImg: [String],
   // location: { type: String, default: null },
   likes:[{type: mongoose.Schema.Types.ObjectId, ref: 'users'}],
   imageSource: { type: String, default: 'null' },

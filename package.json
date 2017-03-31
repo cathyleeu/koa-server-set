@@ -15,6 +15,7 @@
     "bcrypt": "^0.8.7",
     "forever": "^0.15.2",
     "jsonwebtoken": "^7.1.9",
+    "jwt-simple": "^0.5.1",
     "koa": "^2.0.0",
     "koa-bodyparser": "^3.1.0",
     "koa-cluster": "^0.2.2",

@@ -5,15 +5,24 @@ import jwt from 'jsonwebtoken'
 
 
 const User = new mongoose.Schema({
-  userType: { type: String, default: 'Acting' },
-  userName: { type: String, required: true },
-  uuid: String,
-  sex: String,
-  age: Number,
-  userEmail: String,
-  userUniv: { type: String, required: true },
+  email: String,
   password: String,
-}, {collection: 'users'})
+  univ: String,
+  userType: {
+    type: String,
+    enum: ['학생','알룸나이','기업','관리자']
+  },
+  userImg: String,
+  // active: String,
+  name: String,
+  uuid: String,
+  joined: Date,
+  corporation: String,
+  projects: [String],
+  workType: String,
+  selfIntro: String,
+  createdOn: { type: Date, default: Date.now }
+}, {collection: 'user'})
 
 export default mongoose.model('user', User)
 
